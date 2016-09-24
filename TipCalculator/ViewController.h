@@ -7,15 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Settings.h"
 
 @interface ViewController : UIViewController
 {
-    IBOutlet UILabel *tipLbl;
+    IBOutlet UILabel *tipAmountLbl;
     IBOutlet UILabel *totalLbl;
-    
+    IBOutlet UILabel *tipLbl;
     IBOutlet UITextField *billTF;
     IBOutlet UISegmentedControl *tipControl;
     
+    UIButton *doneBtn;
+    
+    Settings *settingObj;
+    
+    BOOL theme;
+    BOOL round;
 }
 
 - (IBAction)onTap;

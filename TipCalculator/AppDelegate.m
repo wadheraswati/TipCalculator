@@ -16,6 +16,31 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if(![userDefaults objectForKey:@"Tip1"])
+    {
+        [userDefaults setObject:@"15%" forKey:@"Tip1"];
+    }
+    if(![userDefaults objectForKey:@"Tip2"])
+    {
+        [userDefaults setObject:@"20%" forKey:@"Tip2"];
+    }
+    if(![userDefaults objectForKey:@"Tip3"])
+    {
+        [userDefaults setObject:@"25%" forKey:@"Tip3"];
+    }
+    if(![userDefaults objectForKey:@"Theme"])
+    {
+        [userDefaults setObject:[NSNumber numberWithInt:0] forKey:@"Theme"];
+    }
+    if(![userDefaults objectForKey:@"Round"])
+    {
+        [userDefaults setObject:[NSNumber numberWithInt:0] forKey:@"Round"];
+    }
+    
+    [userDefaults synchronize];
+    
     // Override point for customization after application launch.
     return YES;
 }

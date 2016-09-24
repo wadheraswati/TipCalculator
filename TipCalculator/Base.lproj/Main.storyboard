@@ -21,7 +21,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gzn-C3-TJx">
-                                <rect key="frame" x="12" y="144" width="25" height="21"/>
+                                <rect key="frame" x="12" y="144" width="77" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.19219617901804753" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,19 +46,19 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" id="FcJ-Vd-qXt">
-                                <rect key="frame" x="12" y="252" width="296" height="12"/>
+                                <rect key="frame" x="12" y="234" width="296" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20431492448067357" green="0.18793575786745834" blue="0.76088023560209428" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gcU-5E-2Uz">
-                                <rect key="frame" x="12" y="279" width="134" height="26"/>
+                                <rect key="frame" x="12" y="261" width="134" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.10320206158620882" blue="0.15079655961634408" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jxg-Wx-5VH">
-                                <rect key="frame" x="162" y="279" width="146" height="26"/>
+                                <rect key="frame" x="162" y="261" width="146" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.10320206158620882" blue="0.15079655961634408" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,7 +78,7 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="oCl-CK-3iV" appends="YES" id="HgQ-uw-mpw"/>
@@ -89,8 +89,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billTF" destination="LFx-yO-wkM" id="1a7-bL-Ejc"/>
+                        <outlet property="tipAmountLbl" destination="hln-mr-UK1" id="Xld-vN-TK2"/>
                         <outlet property="tipControl" destination="RpG-Ha-jgV" id="utV-Tz-pKY"/>
-                        <outlet property="tipLbl" destination="hln-mr-UK1" id="OcR-CI-xoo"/>
+                        <outlet property="tipLbl" destination="gzn-C3-TJx" id="eDw-lN-WoG"/>
                         <outlet property="totalLbl" destination="jxg-Wx-5VH" id="oDQ-hc-hu6"/>
                     </connections>
                 </viewController>
@@ -106,23 +107,121 @@
         <!--Settings-->
         <scene sceneID="uUk-rA-1JO">
             <objects>
-                <viewController id="ZTK-xe-NYW" customClass="Settings" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Settings" id="ZTK-xe-NYW" customClass="Settings" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IsN-fO-jr2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lUb-ad-eQi">
-                                <rect key="frame" x="0.0" y="65" width="320" height="242"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Percentages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kHN-ds-UpN">
+                                <rect key="frame" x="98" y="118" width="125" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.19219617899999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15%" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="dJg-yL-3HP">
+                                <rect key="frame" x="17" y="156" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="0.10320206160000001" blue="0.15079655959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZTK-xe-NYW" id="Ufe-Jj-XIl"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20%" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="FMe-Vd-Qk1">
+                                <rect key="frame" x="122" y="156" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="0.10320206160000001" blue="0.15079655959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZTK-xe-NYW" id="WHi-ae-9aq"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25%" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="7zv-Lt-JrH">
+                                <rect key="frame" x="227" y="156" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="0.10320206160000001" blue="0.15079655959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZTK-xe-NYW" id="DHA-mN-RhH"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E32-5J-ZJO">
+                                <rect key="frame" x="133" y="242" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.19219617899999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="1e2-zr-vvC">
+                                <rect key="frame" x="117" y="283" width="91" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Light"/>
+                                    <segment title="Dark"/>
+                                </segments>
+                                <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentClicked:" destination="ZTK-xe-NYW" eventType="valueChanged" id="97e-xT-TpK"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round off Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PGs-9a-2ga">
+                                <rect key="frame" x="90" y="356" width="140" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.19219617899999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="BQF-uM-BQY">
+                                <rect key="frame" x="128" y="397" width="73" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="No"/>
+                                    <segment title="Yes"/>
+                                </segments>
+                                <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentClicked:" destination="ZTK-xe-NYW" eventType="valueChanged" id="uyP-Nt-C3D"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yZN-bx-oU4" appends="YES" id="atI-GM-B6O"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="HiK-fI-3Zs"/>
+                    <navigationItem key="navigationItem" title="Settings" id="HiK-fI-3Zs">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1PE-hH-HDg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ogb-A2-GL7">
+                                <rect key="frame" x="265" y="7" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetClicked" destination="ZTK-xe-NYW" eventType="touchUpInside" id="j8c-Mp-d7k"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="roundControl" destination="BQF-uM-BQY" id="t3J-kA-aZO"/>
+                        <outlet property="themeControl" destination="1e2-zr-vvC" id="Y3s-2X-6p0"/>
+                        <outlet property="tip1TF" destination="dJg-yL-3HP" id="fWY-NZ-o9g"/>
+                        <outlet property="tip2TF" destination="FMe-Vd-Qk1" id="5YW-rn-iSl"/>
+                        <outlet property="tip3TF" destination="7zv-Lt-JrH" id="V52-xX-Z6O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ul7-iC-5Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yZN-bx-oU4">
+                    <connections>
+                        <action selector="onTap" destination="ZTK-xe-NYW" id="qHo-Bp-ZXK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1012" y="334"/>
         </scene>

@@ -10,7 +10,20 @@
 
 @interface Settings : UIViewController
 {
-    IBOutlet UITableView *myTable;
+    IBOutlet UITextField *tip1TF;
+    IBOutlet UITextField *tip2TF;
+    IBOutlet UITextField *tip3TF;
+    
+    IBOutlet UISegmentedControl *themeControl;
+    IBOutlet UISegmentedControl *roundControl;
+    
+    UIButton *doneBtn;
+    
+    UITextField *currentTF;
 }
+
+- (IBAction)onTap;
+- (IBAction)segmentClicked:(UISegmentedControl *)sender;
+- (IBAction)resetClicked;
 
 @end
