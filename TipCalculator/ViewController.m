@@ -67,7 +67,7 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [doneBtn setBackgroundColor:[UIColor lightGrayColor]];
+    [doneBtn setBackgroundColor:[UIColor orangeColor]];
     [doneBtn setTitle:@"Done" forState:UIControlStateNormal];
     [doneBtn addTarget:self.view action:@selector(endEditing:) forControlEvents:UIControlEventTouchUpInside];
     [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
