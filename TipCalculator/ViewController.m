@@ -71,7 +71,7 @@
     [doneBtn setTitle:@"Done" forState:UIControlStateNormal];
     [doneBtn addTarget:self.view action:@selector(endEditing:) forControlEvents:UIControlEventTouchUpInside];
     [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [doneBtn setFrame:CGRectMake(0, self.view.bounds.size.height - 165 - self.navigationController.navigationBar.bounds.size.height - 10 - 40, self.view.bounds.size.width, 40)];
+    [doneBtn setFrame:CGRectMake(0, self.view.bounds.size.height - 160 - self.navigationController.navigationBar.bounds.size.height - 10 - 40, self.view.bounds.size.width, 40)];
     [self.view addSubview:doneBtn];
     return YES;
 }
