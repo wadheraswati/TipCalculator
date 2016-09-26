@@ -71,7 +71,7 @@
     [doneBtn setTitle:@"Done" forState:UIControlStateNormal];
     [doneBtn addTarget:self.view action:@selector(endEditing:) forControlEvents:UIControlEventTouchUpInside];
     [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [doneBtn setFrame:CGRectMake(0, self.view.bounds.size.height - 160 - self.navigationController.navigationBar.bounds.size.height - 10 - 40, self.view.bounds.size.width, 40)];
+    [doneBtn setFrame:CGRectMake(0, self.view.bounds.size.height - 165 - self.navigationController.navigationBar.bounds.size.height - 10 - 40 - 10, self.view.bounds.size.width, 40)];
     [self.view addSubview:doneBtn];
     return YES;
 }
@@ -93,6 +93,13 @@
     {
         [textField resignFirstResponder];
         return NO;
+    }
+    else if(![string isEqualToString:@""])
+    {
+        if(![self validateCharacter:string])
+        {
+            return NO;
+        }
     }
     
     return YES;
@@ -131,7 +138,7 @@
     [tipLbl setText:[NSString stringWithFormat:@"Tip (%@)",tipPer]];
     tipPer = [tipPer stringByReplacingOccurrencesOfString:@"%" withString:@""];
     NSLog(@"%.2f",(float)[tipPer intValue]/100);
-    tipAmount = [bill integerValue] * (float)[tipPer intValue]/100;
+    tipAmount = [bill floatValue] * (float)[tipPer intValue]/100;
 
     if(round)
     {
@@ -155,6 +162,13 @@
 - (void)onTap
 {
     [self.view endEditing:YES];
+}
+
+- (BOOL)validateCharacter:(NSString *)string
+{
+    NSCharacterSet *validChars = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    
+    return ([string rangeOfCharacterFromSet:validChars].location != NSNotFound);
 }
 
 - (void)didReceiveMemoryWarning {
